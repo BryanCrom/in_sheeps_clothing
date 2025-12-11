@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bktulnmkrs58"]
+
+[ext_resource type="Texture2D" uid="uid://cfau7df2a0v4s" path="res://assets/double_barrel/DBShotgunText.png" id="1_fx4fl"]
+
+[resource]
+albedo_texture = ExtResource("1_fx4fl")

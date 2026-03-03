@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4kr5rnfbiic7"]
+[gd_scene load_steps=6 format=3 uid="uid://b4kr5rnfbiic7"]
 
 [ext_resource type="PackedScene" uid="uid://da5ygvb53nn1l" path="res://scenes/Player.tscn" id="1_88rkb"]
+[ext_resource type="Texture2D" uid="uid://cchjr5jyidxqb" path="res://assets/crosshairs/crosshair001.png" id="2_i20g8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hddm4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,3 +31,18 @@ size = Vector3(16.5, 1, 17.300001)
 
 [node name="Player" parent="." instance=ExtResource("1_88rkb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Crosshair001" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i20g8")
+expand_mode = 1

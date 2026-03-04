@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4kr5rnfbiic7"]
+[gd_scene load_steps=7 format=3 uid="uid://b4kr5rnfbiic7"]
 
 [ext_resource type="PackedScene" uid="uid://da5ygvb53nn1l" path="res://scenes/Player.tscn" id="1_88rkb"]
 [ext_resource type="Texture2D" uid="uid://cchjr5jyidxqb" path="res://assets/crosshairs/crosshair001.png" id="2_i20g8"]
@@ -11,10 +11,21 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_hddm4")
 
 [sub_resource type="Environment" id="Environment_kddj0"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.11348722, 0.31354177, 0.5357167, 1)
 sky = SubResource("Sky_qchbg")
+ambient_light_source = 2
+ambient_light_color = Color(0.49855882, 0.48139167, 0.43514156, 1)
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.33463418, 0.526436, 0.9552564, 1)
+fog_density = 0.004
+fog_height = -1.0
+fog_height_density = 0.075
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i20g8"]
+albedo_color = Color(0.06985913, 0.39324325, 0.21886218, 1)
 
 [node name="playground" type="Node3D"]
 
@@ -26,8 +37,28 @@ transform = Transform3D(-0.76604444, -0.5566705, 0.32139382, 2.7805948e-08, 0.49
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.400001, 0)
 use_collision = true
-size = Vector3(16.5, 1, 17.300001)
+size = Vector3(20, 20, 20)
+material = SubResource("StandardMaterial3D_i20g8")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2, -9.400001, 11.6)
+use_collision = true
+size = Vector3(20, 20, 20)
+material = SubResource("StandardMaterial3D_i20g8")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6, -9.400001, -12.199999)
+use_collision = true
+size = Vector3(20, 20, 20)
+material = SubResource("StandardMaterial3D_i20g8")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.149998, 0.049999237, -10.099998)
+use_collision = true
+size = Vector3(10.3, 1.1, 8)
+material = SubResource("StandardMaterial3D_i20g8")
 
 [node name="Player" parent="." instance=ExtResource("1_88rkb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
